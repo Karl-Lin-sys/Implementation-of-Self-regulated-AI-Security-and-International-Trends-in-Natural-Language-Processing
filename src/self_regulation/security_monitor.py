@@ -50,8 +50,7 @@ class SecurityMonitor:
                 results["flags"].append(f"PII Detected (type: '{pii_type}')")
                 sanitized = re.sub(pattern, f"[REDACTED {pii_type.upper()}]", sanitized)
 
-        if len(results["flags"]) > 0 and results["is_safe"]:
-             results["sanitized_text"] = sanitized
+        results["sanitized_text"] = sanitized
              
         return results
 
